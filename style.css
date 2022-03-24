@@ -1,0 +1,227 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: normal;
+    background: #fff;
+}
+
+/*.wrapper {
+    display: inline-block;
+}*/
+
+
+.container_total {
+    display: flex;
+}
+
+.container {
+    display: flex;    
+    justify-content: space-between;       
+ }
+
+.wrapper_selection_block {
+    /*margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;*/
+    width: 100%;
+	max-width: 410px;
+    height: 100%;
+    max-height: 1000px;/*How use scroll?????*/ 
+    overflow-y: auto;
+    overflow-x: hidden;     
+}
+
+/*.wrapper_selection_block::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #18aaaa;
+}?????*/
+
+.left_header{
+    padding-top: 12px;
+    padding-left: 20px;
+    padding-bottom: 12px;/*Using margin-bottom, shadow disappears???*/ 
+    background:#fff;          
+    position:sticky;/*???*/
+    z-index: 2;
+    top:0;    
+}
+
+.count_orders {        
+    font-size: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    background: #ece7e7;
+    position:relative;
+    border-top:1px solid #918787;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+}
+
+.search {        
+    margin-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding: 5px 50px 5px 10px;			
+	font-weight: 400;
+	font-size: 14px;	
+	width: 170px;
+}
+
+.lupa {    
+    position: absolute;
+    left:190px;
+    top: 39px;   
+}
+
+.lupa:hover {/*????????*/
+    cursor: pointer;
+    background: #d7d7d7;    
+}
+
+.refresh {/* couldn't find right svg*/    
+    position: absolute;
+    left:225px;
+    top: 43px;   
+}
+
+.refresh:hover {/*???*/
+    cursor: pointer;
+    background: #d7d7d7;    
+}
+
+.filter {/* couldn't find right svg*/
+    padding-top: 42px;
+    padding-left: 30px;
+}
+
+.group {/* couldn't find right svg*/
+    padding-top: 42px;
+    padding-right: 20px;
+}
+
+.main_wrapper_selection_block {
+    border-bottom: 1px solid #333333;    
+    height: 100%;
+}
+
+.main_wrapper_selection_block:hover {
+    cursor: pointer;
+    background: #ece7e7;    
+}
+
+.orders_number {
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+.orders_date {
+    font-size: 20px;
+    padding-right: 20px;
+}
+
+.orders_info {
+    margin-top: -10px;
+    padding-left: 20px;    
+    width: 50%;
+    line-height: 160%;
+    color: gray;   
+}
+
+.shipped_time_in {
+    padding-right: 20px;
+    margin-top: -10px;
+    color: green;
+}
+
+.shipped_time_urgent {
+    padding-right: 20px;
+    margin-top: -10px;
+    color: orange;
+}
+
+.shipped_time_late {
+    padding-right: 20px;
+    margin-top: -10px;
+    color: red;
+}
+
+.description_block {
+    /*margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;*/
+    width: 100%;
+	max-width: 1500px;    
+    height: 100%;
+    max-height: 800px;/*How use scroll?????*/ 
+    overflow-y: auto;
+    overflow-x: hidden;     
+}
+
+.right_header{    
+    padding-top: 42px;
+    padding-left: 40px;     
+    padding-bottom: 12px;/*Using margin-bottom, shadow disappears???*/ 
+    background:#fff;          
+    position:sticky;/*???*/
+    z-index: 2;
+    top:0;    
+}
+
+.right_header:hover {
+    cursor: pointer;
+    background: #ece7e7; 
+}
+
+.main_wrapper_description_block {
+    border-bottom: 1px solid #918787;    
+    height: 100%;    
+}
+
+.stores_info {
+    margin-top: 10px;
+    padding-left: 40px;
+    line-height: 10%;
+    color: gray;   
+}
+
+.container_shipping_items {
+    display: flex;    
+    align-items: center;    
+ }
+
+ .shipping_info {
+    padding-top: 35px;
+    padding-left: 75px;
+ }
+
+ .processor {
+    padding-top: 35px;
+    padding-left: 40px;
+ }
+
+ .ship_address {
+    padding-left: 70px;
+    padding-top: 135px;
+    font-size: 18px;
+ }
+
+ .stores_address_key {
+    margin-top: 10px;
+    padding-left: 140px;
+    padding-bottom: 30px;
+    line-height: 40%;
+    color: gray;  
+ }
+
+ .stores_address_value {
+    margin-top: 10px;
+    padding-left: 30px;
+    line-height: 40%;     
+ }
