@@ -1,3 +1,7 @@
+b {
+    font-weight: 700;    
+}
+
 body {
     height: 100%;
     box-sizing: border-box;
@@ -154,7 +158,8 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100vh;    
-    color:#32363a;            
+    color:#32363a;
+    background: #f7f7f7;             
 }
 
 .right-header{    
@@ -170,21 +175,26 @@ body {
     background: #e7e9ea; 
 }
 
-.icons-screen-close { /*the icon 'close' pops up to the left of the 'email'*/   
+.icons-screen-close {
+    margin-bottom: 10px; 
     text-align: right;
 }
+
+.close-icon {
+    transform: scale(1.5);
+} 
 
 .icon-email, .icons-screen-close img {    
     padding: 0 7px;
 }
 
 .wrapper-orders-info{
+    background:#fff;
     border-bottom:1px solid #e7e2e2fb;    
 } 
 
 .main-right-block {
-    padding: 32px 32px 0;           
-    background: #f7f7f7;        
+    padding: 32px 32px 0;        
 }
 
 .ordered-info {
@@ -196,8 +206,7 @@ body {
     color: #6A6D76;   
 }
 
-.price-info {
-    /*font-size: bold;*/
+.price-info {    
     padding-left: 20px;
 }
 
@@ -206,7 +215,8 @@ body {
     display: flex;    
     align-items: center;
     background: #f7f7f7;
-    border-bottom: 1px solid #e7e2e2fb;    
+    border-bottom: 1px solid #e7e2e2fb;
+    margin-bottom: 20px;    
 }
 
 .shipping-info {
@@ -224,7 +234,7 @@ body {
     border-bottom: 1px solid #e7e2e2fb; 
 }
 
-.title-address {/*location is not bottom*/
+.title-address {
     height: 44px;
     font-size: 18px;
     border-bottom: 1px solid #e7e2e2fb; 
@@ -232,11 +242,11 @@ body {
 
 .recipient-info {
     line-height: 140%;
-    display: flex;
+    /*display: flex;*/
     padding: 16px 12px 12px;    
 }
 
-.stores-address-key {
+/*.stores-address-key {
     width: 25%;
     padding: 4px;    
     color: #6A6D70;
@@ -246,14 +256,28 @@ body {
 .stores-address-value {
     padding: 4px;    
     color: #32363A;    
+}*/
+
+.name {/* MARGIN???*/
+    margin-left: 150px;
+}
+
+.name-key {
+    width: 25%;/*???*/
+    padding: 4px;    
+    color: #6A6D70;
+    text-align: right;
+}
+
+.name-value {
+    padding: 4px;    
+    color: #32363A; 
 }
  
 .caption-line-items {
-    height: 44px;    
-    text-align: left;
-    vertical-align: bottom;/*don't move bottom*/
-    /*margin-top: 12px; moved with marcin*/
-    padding: 0 8px 0 12px;
+        
+    text-align: left;   
+    padding: 25px 8px 10px 12px;
     font-size: 18px;
     color: #32363A;
 }
@@ -284,6 +308,11 @@ td {
 }
 
 .item-name {
-     font-size: bold;/*doesn't work*/
+    line-height: 150%;
+     font-size: bold;
+}
+
+.text-table {/*doesn't work*/    
+    vertical-align: center;
 }
    
