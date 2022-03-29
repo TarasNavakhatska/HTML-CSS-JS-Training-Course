@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAP UI5</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <!--<link rel="stylesheet" href="fonts\SAP-icons.ttf">-->
-    <script src="https://kit.fontawesome.com/81d23272d7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="pictures-nav">
                         <img src="images\filter.svg" title="Filter" width="16" height="16">
-                        <img src="images\group.svg" title="Group" width="16" height="16">
+                        <img src="images\group.svg" title="Group" width="18" height="18">
                     </div>
 
                 </nav>
@@ -150,33 +150,35 @@
         <div class="description-block">
 
             <header class="right-header">
+                <div class="icons-screen-close">
+                    <img src="images\fullscreen.svg" title="Full Screen" width="17" height="17">
+                    <img src="images\close.svg" title="Close" width="27" height="27">
+                </div>
                 <div class="container">
                     <span class="count-orders">Order 7311</span>
-                    <div class="pictures">
-                        <img src="images\fullscreen.svg" title="Full Screen" width="23" height="23">
-                        <img src="images\close.svg" title="Close" width="28" height="28">
+                    <div class="icon-email">
                         <img src="images\message.svg" title="Email" width="20" height="20">
                     </div>
                 </div>
             </header>
 
             <main>
-                <div class="main-wrapper-description-block">
+                <div class="wrapper-orders-info">
                     <section>
-                        <div class="container-total">
-                            <div class="stores-info">
+                        <div class="ordered-info">
+                            <div class="stores-info-ordered">
                                 <p>Customer: Alfreds Futterkiste</p>
                                 <p>Ordered: Nov 21, 2016</p>
                                 <p>Shipped: Nov 25, 2016</p>
                             </div>
-                            <div class="stores-info">
+                            <div class="price-info">
                                 <p>Price</p>
-                                <p><b>755,055.40</b> EUR</p>
+                                <p><b>755,055.40</b> EUR</p><!-- BOLD doesn't work-->
                             </div>
                         </div>
                     </section>
                 </div>
-                <div class="main-wrapper-description-block">
+                <div class="main-right-block">
                     <section>
                         <div class="container-shipping-items">
                             <div class="shipping-info" title="Shipping Info">
@@ -187,67 +189,67 @@
                             </div>
                         </div>
                     </section>
-                </div>
-                <div class="main-wrapper-description-block">
-                    <div class="ship-address">Shipping Address</div>
-                </div>
-                <div class="main-wrapper-description-block">
-                    <section>
-                        <div class="container-total">
-                            <div class="stores-address-key">
-                                <p>Name:</p>
-                                <p>Street:</p>
-                                <p>ZIP Code / City:</p>
-                                <p>Region:</p>
-                                <p>Country:</p>
+
+                    <div class="ship-address">
+                        <div class="title-address">Shipping Addres</div>
+                        <section>
+
+                            <div class="recipient-info">
+                                <div class="stores-address-key">
+                                    <p>Name:</p>
+                                    <p>Street:</p>
+                                    <p>ZIP Code / City:</p>
+                                    <p>Region:</p>
+                                    <p>Country:</p>
+                                </div>
+                                <div class="stores-address-value">
+                                    <p>ExcellentParcel</p>
+                                    <p>Tottenham Court Road</p>
+                                    <p>N170AA London</p>
+                                    <p>Greater London</p>
+                                    <p>United Kingdom</p>
+                                </div>
                             </div>
-                            <div class="stores-address-value">
-                                <p>ExcellentParcel</p>
-                                <p>Tottenham Court Road</p>
-                                <p>N170AA London</p>
-                                <p>Greater London</p>
-                                <p>United Kingdom</p>
-                            </div>
-                        </div>
+                        </section>
+                    </div>
+
+                    <div class="caption-line-items">Line Items (3)</div>
+                    <section class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Unit Price</th>
+                                    <th class="text-table-right">Quantity</th>
+                                    <th class="text-table-right">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="item-name">Northwoods Cranberry Sauce<p>5046</p>
+                                    </td>
+                                    <td class="item-name">61.19 EUR</td>
+                                    <td class="text-table-right">6636</td>
+                                    <td class="text-table-right">409,374.84 EUR</td>
+                                </tr>
+                                <tr>
+                                    <td class="item-name">Aniseed Syrup<p>1412</p>
+                                    </td>
+                                    <td>65.89 EUR</td>
+                                    <td class="text-table-right">3436</td>
+                                    <td class="text-table-right">226,398.04 EUR</td>
+                                </tr>
+                                <tr>
+                                    <td class="item-name">Tunnbröd<p>5672</p>
+                                    </td>
+                                    <td>14.77 EUR</td>
+                                    <td class="text-table-right">8076</td>
+                                    <td class="text-table-right">119,282.52 EUR</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
                 </div>
-
-                <section class="table">
-                    <table>
-                        <caption>Line Items (3)</caption>
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Unit Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="item-name">Northwoods Cranberry Sauce<p>5046</p>
-                                </td>
-                                <td class="item-name">61.19 EUR</td>
-                                <td>6636</td>
-                                <td>409,374.84 EUR</td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">Aniseed Syrup<p>1412</p>
-                                </td>
-                                <td>65.89 EUR</td>
-                                <td>3436</td>
-                                <td>226,398.04 EUR</td>
-                            </tr>
-                            <tr>
-                                <td class="item-name">Tunnbröd<p>5672</p>
-                                </td>
-                                <td>14.77 EUR</td>
-                                <td>8076</td>
-                                <td>119,282.52 EUR</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
 
             </main>
 

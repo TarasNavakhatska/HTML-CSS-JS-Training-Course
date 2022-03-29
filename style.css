@@ -14,8 +14,7 @@ body {
     display: flex;
 }
 
-.container {
-    margin: 0 20px;        
+.container {           
     display: flex;    
     justify-content: space-between;       
 }
@@ -37,24 +36,25 @@ body {
     background-color: #9da4aa;
 }
 
-.left-header{
-    padding: 12px 20px;
+.left-header{    
+    padding: 8px 16px;
     background:#fff;
-    border-bottom:1px solid #918787;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);               
+    border-bottom:1px solid #e7e2e2fb;
+    box-shadow: 0 0 25px rgba(131, 128, 128, 0.5);               
     position:sticky;
     z-index: 2;
     top:0;    
 }
 
-.count-orders {        
+.count-orders {
+    color: #32363A;                 
     font-size: 20px;
 }
 
 .navigation {    
     display: flex;
     justify-content: space-between;
-    background: #e7e9ea;
+    background: #f7f7f7;
     position:relative;    
     box-shadow: 0 0 5px rgba(0,0,0,0.5); 
 }
@@ -112,14 +112,14 @@ body {
 	padding-right: 20px;
 }
 
-.main-wrapper-selection-block {
-    border-bottom: 1px solid #333333;    
-    /*height: 100%;*/         
+.main-wrapper-selection-block {    
+    padding: 16px;
+    border-bottom: 1px solid #e7e2e2fb;  
 }
 
 .main-wrapper-selection-block:hover {
     cursor: pointer;
-    background: #e7e9ea;    
+    background: #f7f7f7;    
 }
 
 .orders-number {
@@ -127,28 +127,28 @@ body {
 }
 
 .orders-date {
-    font-size: 20px;    
+    font-size: 22px;    
 }
 
 .orders-info {
-    margin-top: -10px;        
+    padding-top: 5px;          
     width: 50%;
-    line-height: 160%;
-    color: gray;   
+    line-height: 140%;
+    color: #6A6D70;   
 }
 
-.shipped-time-in {    
-    margin-top: -10px;
+.shipped-time-in {
+    padding-top: 5px;/*??????*/
     color: #107e3e;
 }
 
 .shipped-time-urgent {    
-    margin-top: -10px;
+    padding-top: 5px;/*?????*/
     color: #df6e0c;
 }
 
 .shipped-time-late {    
-    margin-top: -10px;
+    padding-top: 5px;
     color: #b00;
 }
 
@@ -168,7 +168,7 @@ body {
 }
 
 .right-header{    
-    padding: 42px 42px 12px 20px;       
+    padding: 8px 32px;       
     background:#fff;          
     position:sticky;
     z-index: 2;
@@ -180,73 +180,92 @@ body {
     background: #e7e9ea; 
 }
 
-.pictures {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.icons-screen-close {    
+    text-align: right;
 }
 
-.pictures img {    
-	padding-right: 20px;
+.icon-email, .icons-screen-close img {    
+    padding: 0 7px;
 }
 
-.main-wrapper-description-block {        
-    border-bottom: 1px solid #918787;    
-    /*height: 100%;
-    width: 100%;*/    
+.wrapper-orders-info{
+    border-bottom:1px solid #e7e2e2fb;    
+} 
+
+.main-right-block {
+    padding: 32px 32px 0;           
+    background: #f7f7f7;        
 }
 
-.stores-info {
-    padding: 10px 40px;       
-    line-height: 10%;
-    color: gray;   
+.ordered-info {
+    display:flex;     
+    padding: 16px 32px;
+}
+
+.stores-info-ordered, .price-info {      
+    color: #6A6D76;   
+}
+
+.price-info {
+    /*font-size: bold;*/
+    padding-left: 20px;
 }
 
 .container-shipping-items {
+    padding: 0 32px;
     display: flex;    
     align-items: center;
-    background: #e7e9ea;    
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e2e2fb;    
 }
 
- .shipping-info {    
-    /*background-color: #0854a0;*/
-    padding-top: 35px;
-    padding-left: 75px;
+.shipping-info {
+    margin: 0 12px 0 0;
+    padding: 0 4px 0 0;
 }
 
 .processor {
-    padding-top: 35px;
-    padding-left: 40px;
+    margin: 0 0 0 12px;
+    padding: 0 0 0 4px;
 }
 
 .ship-address {
-    padding: 35px 0 10px 70px;    
+    padding: 16px;
+    border-bottom: 1px solid #e7e2e2fb; 
+}
+
+.title-address {/*location is not bottom*/
+    height: 44px;
     font-size: 18px;
+    border-bottom: 1px solid #e7e2e2fb; 
+}
+
+.recipient-info {
+    line-height: 140%;
+    display: flex;
+    padding: 16px 12px 12px;    
 }
 
 .stores-address-key {
-    margin-top: 10px;
-    padding-left: 140px;
-    padding-bottom: 30px;
-    line-height: 40%;
-    color: gray;
+    width: 25%;
+    padding: 4px;    
+    color: #6A6D70;
     text-align: right;  
 }
 
 .stores-address-value {
-    margin-top: 10px;
-    padding-left: 30px;
-    line-height: 40%;     
+    padding: 4px;    
+    color: #32363A;    
 }
  
-caption {    
+.caption-line-items {
+    height: 44px;    
     text-align: left;
-    padding: 10px 0;
+    vertical-align: bottom;/*don't move bottom*/
+    /*margin-top: 12px; moved with marcin*/
+    padding: 0 8px 0 12px;
     font-size: 18px;
-}
-
-.table {
-    padding: 0 40px;
+    color: #32363A;
 }
  
 table {    
@@ -256,20 +275,25 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    background: #FFF;
 }
 th {
     font-weight: normal; 
-    background: #e7e9ea;      
+    background: #f7f7f7;      
     padding: 10px 8px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 td {    
     padding: 9px 8px;    
     border-bottom: 1px solid #ccc;
 }
 
+.text-table-right{
+    text-align: right;
+}
+
 .item-name {
-     font-size: bold;/*?????*/
+     font-size: bold;/*doesn't work*/
 }
    
