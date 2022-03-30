@@ -8,7 +8,6 @@
     <title>SAP UI5</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <!--<link rel="stylesheet" href="fonts\SAP-icons.ttf">-->
 </head>
 
 <body>
@@ -20,22 +19,19 @@
             </header>
             <main>
                 <nav class="navigation">
-                    <!--<p class="toolbar">
-                    <input type="text" class="toolbar" class="search-from-toolbar" placeholder="Search">
-                    </p>-->
-                    <input class="search" placeholder="Search">
-
-                    <div class="lupa" title="Search">
-                        <img src="images\search.png" width="25" height="25">
-                    </div>
-                    <div class="refresh" title="Refresh">
-                        <img src="images\refresh.svg" width="15" height="15">
-                    </div>
+                    <form class="form">
+                        <input id="searchStoresInput" type="text" class="form__search-panel" placeholder="Search">
+                        <div class="form__button-wrapper">
+                            <button type="submit" class="form__search-button"><img class="form__icon-search"
+                                    src="images/search.svg" title="Search" alt="Search"></button>
+                            <button type="reset" class="form__refresh-button"><img class="form__icon-refresh"
+                                    src="images/refresh.svg" title="Refresh" alt="Refresh"></button>
+                        </div>
+                    </form>
                     <div class="pictures-nav">
-                        <img src="images\filter.svg" title="Filter" width="16" height="16">
-                        <img src="images\group.svg" title="Group" width="18" height="18">
+                        <img class="filter-size" src="images\filter.svg" title="Filter" alt="Filter">
+                        <img class="group-size" src="images\group.svg" title="Group" alt="Group">
                     </div>
-
                 </nav>
 
                 <div class="main-wrapper-selection-block">
@@ -138,26 +134,29 @@
                         <p class="shipped-time-in">In time</p>
                     </div>
                 </div>
-
             </main>
-
         </aside>
 
+        <!--Page spread start-->
         <div class="page-spread">
-            <p></p>
+            <div class="page-spread-container">
+                <button class="right-arrow-button"><img class="arrow-right__icon" src="images/right-arrow.svg"
+                        alt="Right-arrow"></button>
+            </div>
         </div>
+        <!--Page spread end-->
 
         <div class="description-block">
 
             <header class="right-header">
                 <div class="icons-screen-close">
-                    <img src="images\fullscreen.svg" title="Full Screen" width="17" height="17">
-                    <img class="close-icon" src="images\close.svg" title="Close" width="17" height="17">
+                    <img src="images\fullscreen.svg" title="Full Screen" width="17" height="17" alt="Fullscreen">
+                    <img class="close-icon" src="images\close.svg" title="Close" width="17" height="17" alt="Close">
                 </div>
                 <div class="container">
                     <span class="count-orders">Order 7311</span>
                     <div class="icon-email">
-                        <img src="images\message.svg" title="Email" width="20" height="20">
+                        <img src="images\message.svg" title="Email" width="20" height="20" alt="Email">
                     </div>
                 </div>
             </header>
@@ -178,6 +177,15 @@
                         </div>
                     </section>
                 </div>
+                <!--arrow, thumb start-->
+                <div class="header__button-container">
+                    <button class="minimize-button header__button-item"><img class="minimize-button__icon"
+                            src="images/up-arrow.svg" alt="Up-arrow"></button>
+                    <button class="attach-button header__button-item"><img class="attach-button__icon"
+                            src="images/pin.svg" alt="Pin"></button>
+                </div>
+                <!--end-->
+
                 <div class="main-right-block">
                     <section>
                         <div class="container-shipping-items">
@@ -194,20 +202,6 @@
                         <div class="title-address">Shipping Addres</div>
                         <section>
                             <div class="recipient-info">
-                                <!--<div class="stores-address-key">
-                                    <p>Name:</p>
-                                    <p>Street:</p>
-                                    <p>ZIP Code / City:</p>
-                                    <p>Region:</p>
-                                    <p>Country:</p>
-                                </div>
-                                <div class="stores-address-value">
-                                    <p>ExcellentParcel</p>
-                                    <p>Tottenham Court Road</p>
-                                    <p>N170AA London</p>
-                                    <p>Greater London</p>
-                                    <p>United Kingdom</p>
-                                </div>-->
                                 <div class="name">
                                     <span class="name-key">Name:</span>
                                     <span class="name-value">ExcellentParcel</span>
@@ -272,9 +266,7 @@
                         </table>
                     </section>
                 </div>
-
             </main>
-
         </div>
 
     </div>
