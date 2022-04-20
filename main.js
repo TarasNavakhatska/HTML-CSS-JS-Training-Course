@@ -8007,20 +8007,6 @@ const listOrder = {
   },
 };
 
-/*const renderList = () => {
-  const orders = document.getElementById("list");
-  listOrder.d.results.forEach((element) => {
-    const div = document.createElement("div");
-    const div1 = document.createElement("div");
-    div.innerHTML =
-      "Order:" + element.OrderID + " " + "OrderDate:" + element.OrderDate;
-    div1.innerHTML = "ShippedDate:" + element.ShippedDate;
-    orders.appendChild(div);
-    orders.appendChild(div1);
-  });
-};
-renderList();*/
-
 const renderList = () => {
   const orders = document.getElementById("list");
   listOrder.d.results.forEach((element) => {
@@ -8043,23 +8029,22 @@ const renderList = () => {
     p3.classList.add("orders-info");
 
     const p4 = document.createElement("p");
-    /*p4.classList.add("orders-number");*/
+    /*p4.classList.add("orders-number");????????????????*/
 
-    p1.innerHTML = "Order " + element.OrderID;
-    p2.innerHTML = parseDate(element.OrderDate);
-    /*const t1 = createElement("p");
-    const br = createElement("br");
-    const t2 = createElement("p");
-    t1.classList.add("orders-info");
-    t2.classList.add("orders-info");
-    t1.innerHTML = element.ShipName;
-    t2.innerHTML = "Shipped: " + element.ShippedDate;
-    p3.append(t1, t2);*/
+    p1.innerText = "Order " + element.OrderID;
+    p2.innerText = parseDate(element.OrderDate);
 
-    p3.innerHTML = element.ShipName + " " + "Shipped: " + element.ShippedDate;
+    const t1 = document.createTextNode(element.ShipName);
+    const br = document.createElement("br");
+    const t2 = document.createTextNode(
+      "Shipped: " + parseDate(element.ShippedDate)
+    );
+
+    p3.append(t1, br, t2);
+    p4.innerText = timeStatus(element.ShippedDate, element.RequiredDate);
 
     divContainer1.append(p1, p2);
-    divContainer2.append(p3);
+    divContainer2.append(p3, p4);
 
     div.append(divContainer1, divContainer2);
 
@@ -8068,13 +8053,32 @@ const renderList = () => {
 };
 renderList();
 
-const parseDate = function () {
+function parseDate(OrderDate) {
   /*parse numbers*/
-  // const elem = "/Date(836438400000)/";
-  const numEl = parseInt(el.match(/\d+/));
+  const numEl = parseInt(OrderDate.match(/\d+/));
 
-  /*convert to date*/
-  let unix_timestamp = numEl;
-  const date = new Date(unix_timestamp * 1000);
-  return date;
-};
+  /*convert to date*/ /* only month + 1??? */
+  const d = new Date(numEl);
+  const t =
+    d.getMonth() +
+    1 +
+    "/" +
+    d.getDay() +
+    "/" +
+    d
+      .getFullYear()
+      .toString()
+      .substr(-2); /*.toString().substr(-2) -------last 2 numbers*/
+  return t;
+}
+
+/*function timestatus()*/
+function timeStatus(ShippedDate, RequiredDate) {
+  if (RequiredDate > ShippedDate) {
+    return "Urgent";
+  } else if (RequiredDate === ShippedDate) {
+    return "In time";
+  } else {
+    return "Too late";
+  }
+}
