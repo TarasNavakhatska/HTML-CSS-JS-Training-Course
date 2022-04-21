@@ -20,16 +20,6 @@ const renderList = () => {
     p3.classList.add("orders-info");
 
     const p4 = document.createElement("p");
-    /*p4.classList.add(getClassByStatus);????????????????*/
-
-    const p5 = document.createElement("p");
-    p5.classList.add("shipped-time-urgent");
-
-    const p6 = document.createElement("p");
-    p6.classList.add("shipped-time-in");
-
-    const p7 = document.createElement("p");
-    p7.classList.add("shipped-time-late");
 
     p1.innerText = "Order " + element.OrderID;
     p2.innerText = parseDate(element.OrderDate);
@@ -43,13 +33,11 @@ const renderList = () => {
     p3.append(t1, br, t2);
 
     const timeStatus = getTimeStatus(element.ShippedDate, element.RequiredDate);
-    p4.innerText = timeStatus;
-    /*p5.innerText = timeStatus;
-    p6.innerText = timeStatus;
-    p7.innerText = timeStatus;*/
+    p4.innerText = timeStatus.text;
+    p4.classList.add(timeStatus.class);
 
     divContainer1.append(p1, p2);
-    divContainer2.append(p3, p4 /*p5, p6, p7*/);
+    divContainer2.append(p3, p4);
 
     div.append(divContainer1, divContainer2);
 
@@ -82,34 +70,12 @@ function parseDate1(elem) {
   return d;
 }
 
-/*function getTimeStatus()*/
 function getTimeStatus(ShippedDate, RequiredDate) {
   if (RequiredDate > ShippedDate) {
-    return "Urgent";
+    return { text: "Urgent", class: "shipped-time-urgent" };
   } else if (RequiredDate === ShippedDate) {
-    return "In time";
+    return { text: "In Time", class: "shipped-time-in" };
   } else {
-    return "Too late";
+    return { text: "To late", class: "shipped-time-late" };
   }
 }
-
-/*function getClassByStatus()
-function getClassByStatus(timeStatus) {
-  if (timeStatus === "Urgent") {
-    return p5;
-  } else if (timeStatus === "In time") {
-    return p6;
-  } else {
-    return p7;
-  }
-}
-
-/*function getTimeStatus(ShippedDate, RequiredDate) {
-  if (RequiredDate > ShippedDate) {
-    return p5;
-  } else if (RequiredDate === ShippedDate) {
-    return p6;
-  } else {
-    return p7;
-  }
-}*/
