@@ -163,6 +163,11 @@ body {
     background: #f7f7f7;    
 }
 
+.active {
+    cursor: pointer;
+    border: 1px solid #e6acac; 
+}
+
 .orders-number {
     font-size: 18px;
 }

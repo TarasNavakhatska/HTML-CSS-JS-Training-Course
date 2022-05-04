@@ -79,3 +79,19 @@ function getTimeStatus(ShippedDate, RequiredDate) {
     return { text: "To late", class: "shipped-time-late" };
   }
 }
+
+/*selection on click*/
+document.addEventListener("click", function (event) {
+  const activeItems = document.querySelectorAll(
+    ".main-wrapper-selection-block.active"
+  );
+  for (const element of activeItems) {
+    element.classList.remove("active");
+  }
+  if (event.target.closest(".main-wrapper-selection-block")) {
+    event.target
+      .closest(".main-wrapper-selection-block")
+      .classList.toggle("active");
+  }
+  console.log(event.target.closest(".main-wrapper-selection-block"));
+});
