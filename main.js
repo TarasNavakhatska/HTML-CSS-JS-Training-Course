@@ -85,13 +85,27 @@ document.addEventListener("click", function (event) {
   const activeItems = document.querySelectorAll(
     ".main-wrapper-selection-block.active"
   );
+
   for (const element of activeItems) {
     element.classList.remove("active");
   }
-  if (event.target.closest(".main-wrapper-selection-block")) {
-    event.target
-      .closest(".main-wrapper-selection-block")
-      .classList.toggle("active");
+  const outerBlock = event.target.closest(".main-wrapper-selection-block");
+  //console.log(outerBlock);
+
+  if (outerBlock) {
+    outerBlock.classList.toggle("active");
+    const orderIdNode = outerBlock.getElementsByClassName("orders-number")[0];
+    //console.log(orderIdNode);
+    const orderIdNodeInnerText = orderIdNode.innerText;
+    //console.log(orderIdNodeInnerText);
+    const orderID = orderIdNodeInnerText.split(" ")[1];
+    //console.log(orderID);
+
+    const order = listOrder.d.results.find(
+      (element) => element.OrderID == orderID
+    );
+    //console.log(order);
+
+    tableInfo(order);
   }
-  console.log(event.target.closest(".main-wrapper-selection-block"));
 });
