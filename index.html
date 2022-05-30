@@ -161,7 +161,7 @@
                     <img class="close-icon" src="images\close.svg" title="Close" width="17" height="17" alt="Close">
                 </div>
                 <div class="container">
-                    <span class="count-orders">Order 7311</span>
+                    <span id="ordersNumber" class="count-orders"></span>
                     <div class="icon-email">
                         <img src="images\message.svg" title="Email" width="20" height="20" alt="Email">
                     </div>
@@ -173,13 +173,18 @@
                     <section>
                         <div class="ordered-info">
                             <div class="stores-info-ordered">
-                                <p><span>Customer:</span> <!--<span>Alfreds Futterkiste</span>--></p>
-                                <p><span>Ordered:</span> <!--<span>Nov 21, 2016</span>--></p>
-                                <p><span>Shipped:</span> <!--<span>Nov 25, 2016</span>--></p>
+                                <span>Customer:</span>
+                                <span id="customerName"></span>
+                                <br>
+                                <span>Ordered:</span>
+                                <span id="orderedTime"></span>
+                                <br>
+                                <span>Shipped:</span>
+                                <span id="shippedTime"></span>
                             </div>
                             <div class="price-info">
-                                <p>Price</p>
-                                <!--<p><b>755,055.40</b> EUR</p>-->
+                                <p>Price: </p>
+                                <span id="totalPrice"><b></b></span>
                             </div>
                         </div>
                     </section>
@@ -219,7 +224,7 @@
                                 </div>
                                 <div class="name">
                                     <span class="name-key">ZIP Code / City:</span>
-                                    <span id="zipProduct" class="name-value"></span>
+                                    <span id="zip-cityProduct" class="name-value"></span>
                                 </div>
                                 <div class="name">
                                     <span class="name-key">Region:</span>
@@ -234,7 +239,7 @@
                     </div>
 
                     
-                    <div class="caption-line-items">Line Items (3)</div>
+                    <div id="lineItems" class="caption-order-details">Order Details (3)</div>
                     <section class="table">
                         <table>
                             <thead>
