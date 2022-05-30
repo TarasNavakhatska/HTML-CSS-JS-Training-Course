@@ -10,7 +10,7 @@ const tableInfo = (order) => {
   const zipCityProduct = document.getElementById("zip-cityProduct");
   const regionProduct = document.getElementById("regionProduct");
   const countryProduct = document.getElementById("countryProduct");
-  /*const lineItems = document.getElementById("lineItems");*/
+  const lineItems = document.getElementById("lineItems");
 
   ordersNumber.innerHTML = "";
   customerName.innerHTML = "";
@@ -22,66 +22,63 @@ const tableInfo = (order) => {
   zipCityProduct.innerHTML = "";
   regionProduct.innerHTML = "";
   countryProduct.innerHTML = "";
-  /*lineItems.innerHTML = "";*/
+  lineItems.innerHTML = "";
 
-  listOrder.d.results.find((element) => {
-    if (element.OrderID === order.OrderID) {
-      const orders = document.createElement("span");
-      orders.classList.add("count-orders");
-      orders.innerText = "Order " + element.OrderID;
-      ordersNumber.appendChild(orders);
+  const line = document.createElement("div");
+  line.classList.add("caption-order-details");
+  line.innerText =
+    "Order Details " + "(" + order.Order_Details.results.length + ")";
+  lineItems.appendChild(line);
 
-      const customer = document.createElement("span");
-      customer.innerText = element.ShipName;
-      customerName.appendChild(customer);
+  const orders = document.createElement("span");
+  orders.classList.add("count-orders");
+  orders.innerText = "Order " + order.OrderID;
+  ordersNumber.appendChild(orders);
 
-      const timeOrder = document.createElement("span");
-      timeOrder.innerText = parseDate1(element.OrderDate);
-      orderedTime.appendChild(timeOrder);
+  const customer = document.createElement("span");
+  customer.innerText = order.ShipName;
+  customerName.appendChild(customer);
 
-      const timeShipped = document.createElement("span");
-      timeShipped.innerText = parseDate1(element.ShippedDate);
-      shippedTime.appendChild(timeShipped);
+  const timeOrder = document.createElement("span");
+  timeOrder.innerText = parseDate1(order.OrderDate);
+  orderedTime.appendChild(timeOrder);
 
-      /*const price = document.createElement("span");
+  const timeShipped = document.createElement("span");
+  timeShipped.innerText = parseDate1(order.ShippedDate);
+  shippedTime.appendChild(timeShipped);
+
+  const title = document.createElement("span");
+  title.classList.add("name-value");
+  title.innerText = order.ShipName;
+  titleProduct.appendChild(title);
+
+  const street = document.createElement("span");
+  street.classList.add("name-value");
+  street.innerText = order.ShipAddress;
+  streetProduct.appendChild(street);
+
+  const zipCity = document.createElement("span");
+  zipCity.classList.add("name-value");
+  zipCity.innerText = order.ShipPostalCode + "  " + order.ShipCity;
+  zipCityProduct.appendChild(zipCity);
+
+  const region = document.createElement("span");
+  region.classList.add("name-value");
+  region.innerText = order.ShipRegion;
+  regionProduct.appendChild(region);
+
+  const country = document.createElement("span");
+  country.classList.add("name-value");
+  country.innerText = order.ShipCountry;
+  countryProduct.appendChild(country);
+
+  /*const price = document.createElement("span");
        price.innerText =
         element.Order_Details.results.Quantity *
           element.Order_Details.results.UnitPrice +
         "EUR"; 
       console.log(price);
       totalPrice.appendChild(price);*/
-
-      const title = document.createElement("span");
-      title.classList.add("name-value");
-      title.innerText = element.ShipName;
-      titleProduct.appendChild(title);
-
-      const street = document.createElement("span");
-      street.classList.add("name-value");
-      street.innerText = element.ShipAddress;
-      streetProduct.appendChild(street);
-
-      const zipCity = document.createElement("span");
-      zipCity.classList.add("name-value");
-      zipCity.innerText = element.ShipPostalCode + "  " + element.ShipCity;
-      zipCityProduct.appendChild(zipCity);
-
-      const region = document.createElement("span");
-      region.classList.add("name-value");
-      region.innerText = element.ShipRegion;
-      regionProduct.appendChild(region);
-
-      const country = document.createElement("span");
-      country.classList.add("name-value");
-      country.innerText = element.ShipCountry;
-      countryProduct.appendChild(country);
-
-      /* const line = document.createElement("div");
-      line.classList.add("caption-order-details");
-      line.innerText = ;
-      lineItems.appendChild(line);*/
-    }
-  });
 
   /*get table data*/
   const tbody = document.getElementById("tbody");
