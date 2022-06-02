@@ -1,20 +1,22 @@
-//import { clearFields } from "./modules/clearFields.js";
+import clearFields from "./modules/clearFields.js";
+import parseDate1 from "./modules/parseDate1.js";
+const getID = {
+  ordersNumber: document.getElementById("ordersNumber"),
+  customerName: document.getElementById("customerName"),
+  orderedTime: document.getElementById("orderedTime"),
+  shippedTime: document.getElementById("shippedTime"),
+  totalPrice: document.getElementById("totalPrice"),
+  titleProduct: document.getElementById("titleProduct"),
+  streetProduct: document.getElementById("streetProduct"),
+  zipCityProduct: document.getElementById("zip-cityProduct"),
+  regionProduct: document.getElementById("regionProduct"),
+  countryProduct: document.getElementById("countryProduct"),
+  lineItems: document.getElementById("lineItems"),
+};
 
-const tableInfo = (order) => {
+export const tableInfo = (order) => {
   /* get Shipping address*/
-  const ordersNumber = document.getElementById("ordersNumber");
-  const customerName = document.getElementById("customerName");
-  const orderedTime = document.getElementById("orderedTime");
-  const shippedTime = document.getElementById("shippedTime");
-  const totalPrice = document.getElementById("totalPrice");
-  const titleProduct = document.getElementById("titleProduct");
-  const streetProduct = document.getElementById("streetProduct");
-  const zipCityProduct = document.getElementById("zip-cityProduct");
-  const regionProduct = document.getElementById("regionProduct");
-  const countryProduct = document.getElementById("countryProduct");
-  const lineItems = document.getElementById("lineItems");
-
-  const clearFields = () => {
+  /*const clearFields = () => {
     ordersNumber.innerHTML = "";
     customerName.innerHTML = "";
     orderedTime.innerHTML = "";
@@ -26,10 +28,10 @@ const tableInfo = (order) => {
     regionProduct.innerHTML = "";
     countryProduct.innerHTML = "";
     lineItems.innerHTML = "";
-  };
-  clearFields();
+  };*/
+  clearFields(getID);
 
-  /* const setFieldsData = () => {
+  /*const setFieldsData = () => {
     const ordersNumber = document.getElementById("ordersNumber");
     const customerName = document.getElementById("customerName");
     const orderedTime = document.getElementById("orderedTime");

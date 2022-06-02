@@ -1,3 +1,6 @@
+import { tableInfo } from "./view.js";
+import parseDate1 from "./modules/parseDate1.js";
+
 const renderList = () => {
   const orders = document.getElementById("list");
   listOrder.d.results.forEach((element) => {
@@ -55,17 +58,6 @@ function parseDate(elem) {
     year: "2-digit",
     day: "numeric",
     month: "numeric",
-  });
-  return d;
-}
-
-function parseDate1(elem) {
-  const numEl = parseInt(elem.match(/\d+/));
-
-  const d = new Date(numEl).toLocaleString("en", {
-    year: "numeric",
-    day: "numeric",
-    month: "long",
   });
   return d;
 }
