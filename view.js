@@ -1,6 +1,6 @@
 import clearFields from "./modules/clearFields.js";
 import { parseDate1 } from "./modules/dateProcessing.js";
-//import renderTableItems from "./modules/getTableData.js";
+import renderTableItems from "./modules/getTableData.js";
 
 const getID = {
   ordersNumber: document.getElementById("ordersNumber"),
@@ -42,7 +42,7 @@ export const tableInfo = (order) => {
   /*order.Order_Details.results.Quantity *
       order.Order_Details.results.UnitPrice +
     "EUR"*/
-  console.log(priceTotal);/* Correct View in console*/
+  console.log(priceTotal); /* Correct View in console*/
   getID.totalPrice.appendChild(priceTotal);
 
   const title = document.createElement("span");
@@ -77,36 +77,6 @@ export const tableInfo = (order) => {
   lineItems.appendChild(line);
 
   /*get table data*/
-  const renderTableItems = () => {
-    const tbody = document.getElementById("tbody");
-    tbody.innerHTML = "";
-    totalPrice.innerHTML = "";
 
-    const tableItems = order.Order_Details.results.forEach((element) => {
-      const tr1 = document.createElement("tr");
-      tr1.classList.add("text-table");
-      const td1 = document.createElement("td");
-      td1.classList.add("item-name");
-      const nodeB = document.createElement("b");
-      nodeB.innerText = element.Product.ProductName;
-
-      td1.appendChild(nodeB);
-      const td2 = document.createElement("td");
-      td2.classList.add("item-name");
-      td2.innerText = element.UnitPrice + " EUR";
-      console.log(element);
-      const td3 = document.createElement("td");
-      td3.classList.add("text-table-right");
-      td3.innerText = element.Quantity;
-      const td4 = document.createElement("td");
-      td4.classList.add("text-table-right");
-      const total = element.Quantity * element.UnitPrice;
-      td4.innerText = total + " EUR";
-
-      tr1.append(td1, td2, td3, td4);
-
-      tbody.appendChild(tr1);
-    });
-  };
-  renderTableItems();
+  renderTableItems(order);
 };

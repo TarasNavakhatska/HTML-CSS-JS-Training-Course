@@ -1,4 +1,4 @@
-const renderTableItems = () => {
+const renderTableItems = (order) => {
   const tbody = document.getElementById("tbody");
   tbody.innerHTML = "";
   totalPrice.innerHTML = "";
