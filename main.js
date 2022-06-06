@@ -1,5 +1,9 @@
 import { tableInfo } from "./view.js";
-import parseDate1 from "./modules/parseDate1.js";
+import {
+  parseDate,
+  parseDate1,
+  getTimeStatus,
+} from "./modules/dateProcessing.js";
 
 const renderList = () => {
   const orders = document.getElementById("list");
@@ -49,29 +53,6 @@ const renderList = () => {
 };
 renderList();
 
-function parseDate(elem) {
-  /*parse numbers*/
-  const numEl = parseInt(elem.match(/\d+/));
-
-  /*convert to date*/
-  const d = new Date(numEl).toLocaleString("en", {
-    year: "2-digit",
-    day: "numeric",
-    month: "numeric",
-  });
-  return d;
-}
-
-function getTimeStatus(ShippedDate, RequiredDate) {
-  if (RequiredDate > ShippedDate) {
-    return { text: "Urgent", class: "shipped-time-urgent" };
-  } else if (RequiredDate === ShippedDate) {
-    return { text: "In Time", class: "shipped-time-in" };
-  } else {
-    return { text: "To late", class: "shipped-time-late" };
-  }
-}
-
 /*selection on click*/
 document.addEventListener("click", function (event) {
   const activeItems = document.querySelectorAll(
@@ -87,16 +68,14 @@ document.addEventListener("click", function (event) {
   if (outerBlock) {
     outerBlock.classList.toggle("active");
     const orderIdNode = outerBlock.getElementsByClassName("orders-number")[0];
-    //console.log(orderIdNode);
+
     const orderIdNodeInnerText = orderIdNode.innerText;
-    //console.log(orderIdNodeInnerText);
+
     const orderID = orderIdNodeInnerText.split(" ")[1];
-    //console.log(orderID);
 
     const order = listOrder.d.results.find(
       (element) => element.OrderID == orderID
     );
-    //console.log(order);
 
     tableInfo(order);
   }
